@@ -106,10 +106,10 @@
   # animations-dynamic.nix (ml4w project)
   # animations-moving.nix (ml4w project)
   #animChoice = ../../modules/home/hyprland/animations-def.nix;
-  #animChoice = ../../modules/home/hyprland/animations-end4.nix;
+  animChoice = ../../modules/home/hyprland/animations-end4.nix;
   #animChoice = ../../modules/home/hyprland/animations-dynamic.nix;
   #animChoice = ../../modules/home/hyprland/animations-moving.nix;
-  animChoice = ../../modules/home/hyprland/aiAnimation.nix;
+  #animChoice = ../../modules/home/hyprland/aiAnimation.nix;
 
   # Set network hostId if required (needed for zfs)
   # Otherwise leave as-is
