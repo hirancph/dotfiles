@@ -65,7 +65,6 @@
       map ctrl+shift+l        next_layout
       map ctrl+shift+.        move_tab_forward
       map ctrl+shift+,        move_tab_backward
-
       # Miscellaneous
       map ctrl+shift+up      increase_font_size
       map ctrl+shift+down    decrease_font_size
