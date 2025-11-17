@@ -80,6 +80,7 @@
     python3 # For python development
     rhythmbox # audio player
     ripgrep # Improved Grep
+    #spicetify-cli # Listen to music
     socat # Needed For Screenshots
     typioca # Tui Typing software
     unrar # Tool For Handling .rar Files

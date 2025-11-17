@@ -20,7 +20,7 @@
         #"io.github.freedoom.Phase2"      #  Classic Doom FPS 2
         #"io.github.dvlv.boxbuddyrs"      #  Manage distroboxes
         #"de.schmidhuberj.tubefeeder"     #watch YT videos
-
+        #"com.spotify.Client"
         # Add other Flatpak IDs here, e.g., "org.mozilla.firefox"
       ];
 
