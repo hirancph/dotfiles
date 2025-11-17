@@ -81,6 +81,7 @@
     rhythmbox # audio player
     ripgrep # Improved Grep
     socat # Needed For Screenshots
+    typioca # Tui Typing software
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
     usbutils # Good Tools For USB Devices
