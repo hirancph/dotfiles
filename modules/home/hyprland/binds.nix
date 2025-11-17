@@ -46,6 +46,7 @@ in
         # ───────────────────────── Dank Material Shell ─────────────────────────
         "$modifier, N, exec, $HOME/.local/bin/dms ipc call notifications toggle"
         "$modifier SHIFT, escape, exec, $HOME/.local/bin/dms ipc call powermenu toggle"
+        "$modifier SHIFT, N, exec, $HOME/.local/bin/dms ipc call notepad open"
         # ───────────────────────── Utilities ─────────────────────────
         "$modifier, F1, exec, list-keybinds"
         "$modifier, S, exec, screenshootin"
