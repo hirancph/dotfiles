@@ -33,7 +33,7 @@
   environment.systemPackages = with pkgs; [
     # Hyprland systeminfo QT  (Optional)
     #inputs.hyprsysteminfo.packages.${pkgs.system}.default
-
+    android-tools
     amfora # Fancy Terminal Browser For Gemini Protocol
     appimage-run # Needed For AppImage Support
     brave # Brave Browser
@@ -77,11 +77,13 @@
     picard # For Changing Music Metadata & Getting Cover Art
     pkg-config # Wrapper Script For Allowing Packages To Get Info On Others
     playerctl # Allows Changing Media Volume Through Scripts
+    protonvpn-gui # VPN
     python3 # For python development
     rhythmbox # audio player
     ripgrep # Improved Grep
     #spicetify-cli # Listen to music
     socat # Needed For Screenshots
+    telegram-desktop
     typioca # Tui Typing software
     unrar # Tool For Handling .rar Files
     unzip # Tool For Handling .zip Files
