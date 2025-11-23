@@ -60,7 +60,6 @@
       cat = "bat";
       man = "batman";
       typing = "kitty -o font_size=20 typioca";
-      gemini = "gemini -s -m gemini-3-pro";
     };
   };
 }
