@@ -41,7 +41,7 @@
     cliphist # Clipboard manager using rofi menu
     cmatrix # Matrix Movie Effect In Terminal
     cowsay # Great Fun Terminal Program
-    #docker-compose # Allows Controlling Docker From A Single File
+    docker-compose # Allows Controlling Docker From A Single File
     duf # Utility For Viewing Disk Usage In Terminal
     dysk # Disk space util nice formattting
     eza # Beautiful ls Replacement

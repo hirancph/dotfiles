@@ -30,7 +30,7 @@ in
     description = "${gitUsername}";
     extraGroups = [
       "adbusers"
-      #"docker" #access to docker as non-root
+      "docker" #access to docker as non-root
       "libvirtd" #Virt manager/QEMU access
       "lp"
       "networkmanager"

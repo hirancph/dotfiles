@@ -1,9 +1,9 @@
 { pkgs, ... }: {
   # Only enable either docker or podman -- Not both
   virtualisation = {
-    #docker = {
-    #  enable = true;
-    # };
+    docker = {
+      enable = true;
+     };
 
     podman.enable = false;
 
