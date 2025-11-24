@@ -72,6 +72,7 @@
     nodejs
     nwg-displays # configure monitor configs via GUI
     onefetch # provides zsaneyos build info on current system
+    pandoc # Convert files
     pavucontrol # For Editing Audio Levels & Devices
     pciutils # Collection Of Tools For Inspecting PCI Devices
     picard # For Changing Music Metadata & Getting Cover Art
