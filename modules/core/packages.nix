@@ -33,7 +33,6 @@
   environment.systemPackages = with pkgs; [
     # Hyprland systeminfo QT  (Optional)
     #inputs.hyprsysteminfo.packages.${pkgs.system}.default
-    aider-chat-full
     android-tools
     amfora # Fancy Terminal Browser For Gemini Protocol
     appimage-run # Needed For AppImage Support
