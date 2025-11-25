@@ -22,6 +22,7 @@
         #"de.schmidhuberj.tubefeeder"     #watch YT videos
         #"com.spotify.Client"
         # Add other Flatpak IDs here, e.g., "org.mozilla.firefox"
+        "org.gnome.gitlab.somas.Apostrophe"
       ];
 
       # Optional: Automatically update Flatpaks when you run nixos-rebuild swit ch
