@@ -93,6 +93,7 @@
     v4l-utils # Used For Things Like OBS Virtual Camera
     waypaper # wallpaper changer
     warp-terminal # Terminal with AI support build in
+    python313Packages.weasyprint
     wf-recorder #screen recorder
     wget # Tool For Fetching Files With Links
     ytmdl # Tool For Downloading Audio From YouTube

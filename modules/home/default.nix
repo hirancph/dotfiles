@@ -53,6 +53,7 @@ in
     ./wlogout
     ./xdg.nix
     ./yazi
+    ./zathura.nix
     ./zoxide.nix
     ./zsh
   ]
