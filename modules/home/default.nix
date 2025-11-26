@@ -35,6 +35,7 @@ in
     ./lazygit.nix
     #./lazyvim
     #./obs-studio.nix
+    ./noctalia-shell
     ./nvf.nix
     #./obs-studio.nix
     ./rofi
