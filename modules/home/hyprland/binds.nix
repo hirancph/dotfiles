@@ -47,6 +47,7 @@ in
         "$modifier, N, exec, $HOME/.local/bin/dms ipc call notifications toggle"
         "$modifier SHIFT, escape, exec, $HOME/.local/bin/dms ipc call powermenu toggle"
         "$modifier SHIFT, N, exec, $HOME/.local/bin/dms ipc call notepad open"
+        "$modifier SHIFT, B, exec, $HOME/.local/bin/dms ipc call bar toggle 1"
         # ───────────────────────── Utilities ─────────────────────────
         "$modifier, F1, exec, list-keybinds"
         "$modifier, S, exec, screenshootin"
