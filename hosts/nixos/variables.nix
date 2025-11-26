@@ -39,7 +39,7 @@
   # You need to install it by adding it to the `packages.nix`
   # or as a flatpak
   browser = "zen";
-  barChoice = "dms";
+  barChoice = "noctalia";
   # Available Options:
   # Kitty, ghostty, wezterm, aalacrity
   # Note: kitty, wezterm, alacritty have to be enabled in `variables.nix`
