@@ -20,7 +20,7 @@ in
     ./btop.nix
     ./bottom.nix
     ./cava.nix
-    ./dank-material-shell
+    #./dank-material-shell
     ./emoji.nix
     ./eza.nix
     ./fastfetch

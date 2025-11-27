@@ -222,7 +222,7 @@ in
           name = "Local";
           showCalendarEvents = true;
           showWeekNumberInCalendar = false;
-          use12hourFormat = false;
+          use12hourFormat = true;
           useFahrenheit = false;
           weatherEnabled = true;
         };
