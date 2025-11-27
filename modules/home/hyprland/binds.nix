@@ -42,12 +42,15 @@ in
         "$modifier, Y, exec, kitty -e yazi"
         "$modifier, T, exec, thunar"
         "$modifier, M, exec, pavucontrol"
-
+        # ───────────────────────── Noctalia Shell ──────────────────────────
+        "$modifier,comma,exec,noctalia-shell ipc call settings toggle"
+        "$modifier SHIFT, escape, exec,  noctalia-shell ipc call sessionMenu toggle"
+        "$modifier, exec,noctalia-shell ipc call launcher toggle"
         # ───────────────────────── Dank Material Shell ─────────────────────────
-        "$modifier, N, exec, $HOME/.local/bin/dms ipc call notifications toggle"
-        "$modifier SHIFT, escape, exec, $HOME/.local/bin/dms ipc call powermenu toggle"
-        "$modifier SHIFT, N, exec, $HOME/.local/bin/dms ipc call notepad open"
-        "$modifier SHIFT, B, exec, $HOME/.local/bin/dms ipc call bar toggle"
+        #"$modifier, N, exec, $HOME/.local/bin/dms ipc call notifications toggle"
+        #"$modifier SHIFT, escape, exec, $HOME/.local/bin/dms ipc call powermenu toggle"
+        #"$modifier SHIFT, N, exec, $HOME/.local/bin/dms ipc call notepad open"
+        #"$modifier SHIFT, B, exec, $HOME/.local/bin/dms ipc call bar toggle"
         # ───────────────────────── Utilities ─────────────────────────
         "$modifier, F1, exec, list-keybinds"
         "$modifier, S, exec, screenshootin"
