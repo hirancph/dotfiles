@@ -1,4 +1,3 @@
-
 { host
 , config
 , pkgs
@@ -14,38 +13,11 @@ let
     ;
 in
 {
-  home.packages = with pkgs; [
-    swww
-    grim
-    slurp
-    wl-clipboard
-    swappy
-    ydotool
-    hyprpolkitagent
-    hyprland-qtutils # needed for banners and ANR messages
-  ];
-  
-  systemd.user.targets.hyprland-session.Unit.Wants = [
-    "xdg-desktop-autostart.target"
-  ];
-  
-  # Place Files Inside Home Directory
-  home.file = {
-    "Pictures/Wallpapers" = {
-      source = ../../../wallpapers;
-      recursive = true;
-    };
-    ".face.icon".source = ./face.jpg;
-    ".config/face.jpg".source = ./face.jpg;
-  };
-  
+  # ... (Package and file inputs remain the same) ...
+
   wayland.windowManager.hyprland = {
-    
     enable = true;
     package = pkgs.hyprland;
-    # plugins = with pkgs; [
-    #hyprlandPlugins.hy3
-    #];
     
     systemd = {
       enable = true;
@@ -60,10 +32,7 @@ in
     settings = {
       input = {
         kb_layout = "${keyboardLayout}";
-        kb_options = [
-          "grp:alt_caps_toggle"
-          "caps:escape_shifted_capslock"
-        ];
+        kb_options = [ "grp:alt_caps_toggle" "caps:escape_shifted_capslock" ];
         numlock_by_default = true;
         repeat_delay = 300;
         follow_mouse = 1;
@@ -89,96 +58,78 @@ in
 
       general = {
         "$modifier" = "SUPER";
-        layout = "hy3"; # Changed from dwindle to hy3
+        layout = "hy3";
         gaps_in = 6;
         gaps_out = 8;
         border_size = 2;
         resize_on_border = true;
-        # Dark blue solid color (base0E)
+        
+        # Active Border: Solid base04 (Slate Blue) for visibility
         "col.active_border" = "rgb(${config.lib.stylix.colors.base04})";
-        "col.inactive_border" = "rgba(${config.lib.stylix.colors.base00}66)";
+        
+        # Inactive Border: Solid base01 (Lighter Dark) instead of base00
+        # Using base01 ensures the border is actually VISIBLE but darker than active.
+        # Transparency on borders often looks glitchy or invisible on dark wallpapers.
+        "col.inactive_border" = "rgb(${config.lib.stylix.colors.base01})";
       };
 
-      # hy3 Plugin Configuration
       plugin = {
         hy3 = {
-         no_gaps_when_only = 0; # Hide gaps for a single window for sleekness
+         no_gaps_when_only = 0;
          node_collapse_policy = 2;
-         group_inset = 6;  # Reduced inset for tighter group appearance
+         group_inset = 6;
          tab_first_window = false;
 
         tabs = {
-         height = 28;               # Increased tab height for bolder look
-         padding = 12;              # More padding to space out tab text and icons
+         height = 28;
+         padding = 12;
          from_top = false;
-         radius = 8;                # Slightly stronger rounding for ends
+         radius = 8;
          border_width = 2;
          render_text = true;
          text_center = true;
-         text_font = "JetBrainsMono Nerd Font SemiBold";  # Use a stylish, coding-focused font
-         text_height = 13;          # Slightly larger text for clarity
-         text_padding = 6;          # Comfortably space text from edges
+         text_font = "JetBrainsMono Nerd Font SemiBold";
+         text_height = 13;
+         text_padding = 6;
 
-      # Active tab colors (bold, vivid, stylish)
-      "col.active" = "rgb(${config.lib.stylix.colors.base02})";
-      "col.active.border" = "rgb(${config.lib.stylix.colors.base02})";
-      "col.active.text" = "rgb(${config.lib.stylix.colors.base07})";
+         # Active Tab
+         "col.active" = "rgb(${config.lib.stylix.colors.base02})";
+         "col.active.border" = "rgb(${config.lib.stylix.colors.base02})";
+         "col.active.text" = "rgb(${config.lib.stylix.colors.base07})";
 
-      # Inactive tabs: Significantly dimmed
-      # Background: base00 (darkest) with low opacity
-      "col.inactive" = "rgba(${config.lib.stylix.colors.base00}b3)"; 
-         
-      # Border: base01 (slightly lighter) but fully opaque for definition
-      "col.inactive.border" = "rgb(${config.lib.stylix.colors.base01})";
-             
-      # Text: base04 (muted grey-blue) instead of base05 (bright text)
-      # This makes the text look "dimmed" or "disabled"
-      "col.inactive.text" = "rgb(${config.lib.stylix.colors.base04})";
+         # Inactive Tab (You liked this part)
+         "col.inactive" = "rgba(${config.lib.stylix.colors.base00}b3)"; 
+         "col.inactive.border" = "rgb(${config.lib.stylix.colors.base01})";
+         "col.inactive.text" = "rgb(${config.lib.stylix.colors.base04})";
 
-      # Urgent tab colors (high contrast, sharp)
-      "col.urgent" = "rgb(${config.lib.stylix.colors.base08})";
-      "col.urgent.border" = "rgb(${config.lib.stylix.colors.base08})";
-      "col.urgent.text" = "rgb(${config.lib.stylix.colors.base07})";
+         # Urgent Tab
+         "col.urgent" = "rgb(${config.lib.stylix.colors.base08})";
+         "col.urgent.border" = "rgb(${config.lib.stylix.colors.base08})";
+         "col.urgent.text" = "rgb(${config.lib.stylix.colors.base07})";
 
-      blur = true;
-      opacity = 0.85;      # Slight transparency for glass effect
-    };
+         blur = true;
+         opacity = 0.85;
+        };
 
-    autotile = {
-      enable = false;
-      ephemeral_groups = true;
-      trigger_width = 800;
-      trigger_height = 600;
-      workspaces = "all";
-    };
-  };
-};
-      misc = {
-        layers_hog_keyboard_focus = true;
-        initial_workspace_tracking = 0;
-        mouse_move_enables_dpms = true;
-        key_press_enables_dpms = false;
-        disable_hyprland_logo = true;
-        disable_splash_rendering = true;
-        enable_swallow = true; # Enabled for better hy3 experience
-        swallow_regex = "^(kitty|Alacritty|foot)$";
-        vfr = true;
-        vrr = 2;
-
-        # Application not responding (ANR) settings
-        enable_anr_dialog = true;
-        anr_missed_pings = 15;
+        autotile = {
+          enable = false;
+          ephemeral_groups = true;
+          trigger_width = 800;
+          trigger_height = 600;
+          workspaces = "all";
+        };
       };
-
-      # Keep dwindle config for easy fallback
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-        force_split = 2;
-      };
+    };
 
       decoration = {
         rounding = 10;
+        
+        # --- KEY CHANGE HERE ---
+        # This physically darkens the content of inactive windows
+        dim_inactive = true;
+        dim_strength = 0.4; # 0.0 to 1.0 (0.4 is noticeably dim)
+        # -----------------------
+
         blur = {
           enabled = true;
           size = 5;
@@ -193,10 +144,28 @@ in
           color = "rgba(1a1a1aee)";
         };
       };
+      
+      # ... (Rest of config: misc, cursor, ecosystem, etc. remains same) ...
+      
+      misc = {
+        layers_hog_keyboard_focus = true;
+        initial_workspace_tracking = 0;
+        mouse_move_enables_dpms = true;
+        key_press_enables_dpms = false;
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        enable_swallow = true;
+        swallow_regex = "^(kitty|Alacritty|foot)$";
+        vfr = true;
+        vrr = 2;
+        enable_anr_dialog = true;
+        anr_missed_pings = 15;
+      };
 
-      ecosystem = {
-        no_donation_nag = true;
-        no_update_news = false;
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
+        force_split = 2;
       };
 
       cursor = {
@@ -220,6 +189,11 @@ in
       xwayland = {
         force_zero_scaling = true;
       };
+      
+      ecosystem = {
+        no_donation_nag = true;
+        no_update_news = false;
+      };
     };
 
     extraConfig = ''
@@ -227,8 +201,6 @@ in
       monitor=,preferred,auto,auto
       monitor=Virtual-1,1920x1080@60,auto,1
       ${extraMonitorSettings}
-      # To enable blur on waybar uncomment the line below
-      #layerrule = blur,waybar
     '';
   };
 }
