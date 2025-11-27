@@ -37,7 +37,7 @@ in
         # ───────────────────────── Applications ─────────────────────────
         "$modifier, Return, exec, ${terminal}"
         "$modifier SHIFT, Return, exec, rofi-launcher"
-        "$modifier, R, exec, rofi-launcher"
+        #"$modifier, R, exec, rofi-launcher"
         "$modifier, B, exec, ${browser}"
         "$modifier, Y, exec, kitty -e yazi"
         "$modifier, T, exec, thunar"
@@ -45,7 +45,7 @@ in
         # ───────────────────────── Noctalia Shell ──────────────────────────
         "$modifier,comma,exec,noctalia-shell ipc call settings toggle"
         "$modifier SHIFT, escape, exec,  noctalia-shell ipc call sessionMenu toggle"
-        "$modifier, exec,noctalia-shell ipc call launcher toggle"
+        "$modifier, R, exec, noctalia-shell ipc call launcher toggle"
         # ───────────────────────── Dank Material Shell ─────────────────────────
         #"$modifier, N, exec, $HOME/.local/bin/dms ipc call notifications toggle"
         #"$modifier SHIFT, escape, exec, $HOME/.local/bin/dms ipc call powermenu toggle"
