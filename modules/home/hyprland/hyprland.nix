@@ -88,55 +88,66 @@ in
       };
 
       general = {
-        "$modifier" = "SUPER";
-        layout = "hy3"; # Changed from dwindle to hy3
-        gaps_in = 6;
-        gaps_out = 8;
-        border_size = 2;
-        resize_on_border = true;
-        # Dark blue solid color (base0E)
-        "col.active_border" = "rgb(${config.lib.stylix.colors.base04})";
-        "col.inactive_border" = "rgb(${config.lib.stylix.colors.base00})";
-      };
+    "$modifier" = "SUPER";
+    layout = "hy3";
+    gaps_in = 6;
+    gaps_out = 8;
+    border_size = 2;
+    resize_on_border = true;
 
-      # hy3 Plugin Configuration
-      plugin = {
-        hy3 = {
-         no_gaps_when_only = 0; # Hide gaps for a single window for sleekness
-         node_collapse_policy = 2;
-         group_inset = 6;  # Reduced inset for tighter group appearance
-         tab_first_window = false;
+    # AESTHETIC CHOICE:
+    # Use a gradient for the active border. 
+    # This blends the Wallpaper's "Slate" vibe (base0D) with Catppuccin's "Mauve" (base0E).
+    "col.active_border" = "rgb(${config.lib.stylix.colors.base0D}) rgb(${config.lib.stylix.colors.base0E}) 45deg";
+    
+    # Inactive border fades into the background (using base02 - Selection Background)
+    "col.inactive_border" = "rgb(${config.lib.stylix.colors.base02})";
+};
+
+plugin = {
+    hy3 = {
+        no_gaps_when_only = 0;
+        node_collapse_policy = 2;
+        group_inset = 6;
+        tab_first_window = false;
 
         tabs = {
-         height = 28;               # Increased tab height for bolder look
-         padding = 12;              # More padding to space out tab text and icons
-         from_top = false;
-         radius = 8;                # Slightly stronger rounding for ends
-         border_width = 2;
-         render_text = true;
-         text_center = true;
-         text_font = "JetBrainsMono Nerd Font SemiBold";  # Use a stylish, coding-focused font
-         text_height = 13;          # Slightly larger text for clarity
-         text_padding = 6;          # Comfortably space text from edges
+            height = 28;
+            padding = 12;
+            from_top = false;
+            radius = 8;
+            border_width = 2;
+            render_text = true;
+            text_center = true;
+            text_font = "JetBrainsMono Nerd Font SemiBold";
+            text_height = 13;
+            text_padding = 6;
 
-      # Active tab colors (bold, vivid, stylish)
-      "col.active" = "rgb(${config.lib.stylix.colors.base02})";
-      "col.active.border" = "rgb(${config.lib.stylix.colors.base02})";
-      "col.active.text" = "rgb(${config.lib.stylix.colors.base07})";
+            # -- ACTIVE TAB --
+            # Goal: Sleek, "Cyber" look.
+            # Instead of a solid block of color, we use the dark selection background (base02)
+            # but light it up with the Blue Accent (base0D) for the border and text.
+            "col.active" = "rgb(${config.lib.stylix.colors.base02})";
+            "col.active.border" = "rgb(${config.lib.stylix.colors.base0D})";
+            "col.active.text" = "rgb(${config.lib.stylix.colors.base0D})";
 
-      # Inactive tab colors (contrasted but subtler)
-      "col.inactive" = "rgba(40,43,48,0.7)";
-      "col.inactive.border" = "rgb(${config.lib.stylix.colors.base01})";
-      "col.inactive.text" = "rgb(${config.lib.stylix.colors.base05})";
+            # -- INACTIVE TAB --
+            # Goal: "Glassy" stealth.
+            # We use a hardcoded RGBA based on your wallpaper's darkest tone (#141720) 
+            # with opacity to let the wallpaper texture show through.
+            "col.inactive" = "rgba(20, 23, 32, 0.70)"; 
+            "col.inactive.border" = "rgb(${config.lib.stylix.colors.base01})";
+            "col.inactive.text" = "rgb(${config.lib.stylix.colors.base04})"; # Muted text
 
-      # Urgent tab colors (high contrast, sharp)
-      "col.urgent" = "rgb(${config.lib.stylix.colors.base08})";
-      "col.urgent.border" = "rgb(${config.lib.stylix.colors.base08})";
-      "col.urgent.text" = "rgb(${config.lib.stylix.colors.base07})";
+            # -- URGENT TAB --
+            # Classic Error Red (base08)
+            "col.urgent" = "rgb(${config.lib.stylix.colors.base08})";
+            "col.urgent.border" = "rgb(${config.lib.stylix.colors.base08})";
+            "col.urgent.text" = "rgb(${config.lib.stylix.colors.base00})"; # Dark text on bright red
 
-      blur = true;
-      opacity = 0.85;      # Slight transparency for glass effect
-    };
+            blur = true;
+            opacity = 0.85;
+        };
 
     autotile = {
       enable = false;
