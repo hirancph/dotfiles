@@ -23,44 +23,36 @@ in
     home.file.".config/noctalia/settings.json.template" = {
       text = builtins.toJSON {
         appLauncher = {
-          customLaunchPrefix = "";
-          customLaunchPrefixEnabled = false;
-          enableClipPreview = true;
+          backgroundOpacity = 1;
           enableClipboardHistory = false;
           pinnedExecs = [ ];
           position = "center";
           sortByMostUsed = true;
           terminalCommand = "xterm -e";
           useApp2Unit = false;
-          viewMode = "list";
         };
         audio = {
-          cavaFrameRate = 30;
-          externalMixer = "pwvucontrol || pavucontrol";
+          cavaFrameRate = 60;
           mprisBlacklist = [ ];
           preferredPlayer = "";
-          visualizerQuality = "high";
           visualizerType = "linear";
           volumeOverdrive = false;
           volumeStep = 5;
         };
         bar = {
           backgroundOpacity = 1;
-          capsuleOpacity = 1;
           density = "default";
-          exclusive = true;
           floating = false;
           marginHorizontal = 0.25;
           marginVertical = 0.25;
           monitors = [ ];
-          outerCorners = true;
-          position = "left";
+          position = "top";
           showCapsule = true;
           widgets = {
             center = [
               {
                 customFont = "";
-                formatHorizontal = "HH:mm ddd, MMM dd";
+                formatHorizontal = "h:mm AP, MMM dd";
                 formatVertical = "HH mm - dd MM";
                 id = "Clock";
                 useCustomFont = false;
@@ -69,8 +61,6 @@ in
             ];
             left = [
               {
-                characterCount = 2;
-                followFocusedScreen = false;
                 hideUnoccupied = false;
                 id = "Workspace";
                 labelMode = "index";
@@ -84,17 +74,31 @@ in
                 showIcon = true;
                 useFixedWidth = false;
               }
+              {
+                hideMode = "hidden";
+                id = "MediaMini";
+                maxWidth = 145;
+                scrollingMode = "hover";
+                showAlbumArt = false;
+                showVisualizer = false;
+                useFixedWidth = false;
+                visualizerType = "linear";
+              }
             ];
             right = [
               {
                 blacklist = [ ];
                 colorizeIcons = false;
-                drawerEnabled = true;
                 id = "Tray";
-                pinned = [ ];
               }
               {
-                id = "ScreenRecorder";
+                id = "SystemMonitor";
+                showCpuTemp = true;
+                showCpuUsage = true;
+                showDiskUsage = false;
+                showMemoryAsPercent = false;
+                showMemoryUsage = true;
+                showNetworkStats = false;
               }
               {
                 hideWhenZero = true;
@@ -106,8 +110,7 @@ in
                 id = "Volume";
               }
               {
-                colorizeDistroLogo = false;
-                customIconPath = "";
+                customIconPath = "/home/don/black-don-os/modules/home/fastfetch/blackdontrans.png";
                 icon = "noctalia";
                 id = "ControlCenter";
                 useDistroLogo = false;
@@ -115,43 +118,21 @@ in
             ];
           };
         };
+        battery = {
+          chargingMode = 0;
+        };
         brightness = {
           brightnessStep = 5;
-          enableDdcSupport = false;
-          enforceMinimum = true;
-        };
-        calendar = {
-          cards = [
-            {
-              enabled = true;
-              id = "banner-card";
-            }
-            {
-              enabled = true;
-              id = "calendar-card";
-            }
-            {
-              enabled = true;
-              id = "timer-card";
-            }
-            {
-              enabled = true;
-              id = "weather-card";
-            }
-          ];
-        };
-        changelog = {
-          lastSeenVersion = "";
         };
         colorSchemes = {
           darkMode = true;
           generateTemplatesForPredefined = true;
           manualSunrise = "06:30";
           manualSunset = "18:30";
-          matugenSchemeType = "scheme-content";
-          predefinedScheme = "Noctalia (default)";
+          matugenSchemeType = "scheme-fruit-salad";
+          predefinedScheme = "Catppuccin";
           schedulingMode = "off";
-          useWallpaperColors = true;
+          useWallpaperColors = false;
         };
         controlCenter = {
           cards = [
@@ -210,34 +191,26 @@ in
         };
         dock = {
           backgroundOpacity = 1;
-          colorizeIcons = false;
-          displayMode = "auto_hide";
-          enabled = true;
+          colorizeIcons = true;
+          displayMode = "exclusive";
           floatingRatio = 1;
-          monitors = [ ];
+          monitors = [ "DP-1" ];
           onlySameOutput = true;
           pinnedApps = [ ];
-          radiusRatio = 0.5;
           size = 1;
         };
         general = {
-          allowPanelsOnScreenWithoutBar = true;
           animationDisabled = false;
           animationSpeed = 1;
-          avatarImage = "/home/fattymanul/.face";
+          avatarImage = "/home/don/black-don-os/modules/home/fastfetch/blackdontrans.png";
           compactLockScreen = false;
-          dimmerOpacity = 0.6;
-          enableShadows = true;
+          dimDesktop = true;
           forceBlackScreenCorners = false;
-          language = "";
+          language = "en";
           lockOnSuspend = true;
-          radiusRatio = 1;
+          radiusRatio = 0.5;
           scaleRatio = 1;
           screenRadiusRatio = 1;
-          shadowDirection = "bottom_right";
-          shadowOffsetX = 2;
-          shadowOffsetY = 3;
-          showHibernateOnLockScreen = false;
           showScreenCorners = false;
         };
         hooks = {
@@ -246,16 +219,12 @@ in
           wallpaperChange = "";
         };
         "location" = {
-          analogClockInCalendar = false;
-          firstDayOfWeek = -1;
-          name = "Thrissur";
+          name = "Local";
           showCalendarEvents = true;
-          showCalendarWeather = true;
           showWeekNumberInCalendar = false;
           use12hourFormat = true;
           useFahrenheit = false;
           weatherEnabled = true;
-          weatherShowEffects = true;
         };
         network = {
           wifiEnabled = true;
@@ -270,10 +239,8 @@ in
           nightTemp = "4000";
         };
         notifications = {
-          backgroundOpacity = 1;
           criticalUrgencyDuration = 15;
-          enableKeyboardLayoutToast = true;
-          enabled = true;
+          doNotDisturb = false;
           "location" = "top_right";
           lowUrgencyDuration = 3;
           monitors = [ ];
@@ -283,9 +250,7 @@ in
         };
         osd = {
           autoHideMs = 2000;
-          backgroundOpacity = 1;
           enabled = true;
-          enabledTypes = [ ];
           "location" = "top_right";
           monitors = [ ];
           overlayLayer = true;
@@ -294,70 +259,23 @@ in
           audioCodec = "opus";
           audioSource = "default_output";
           colorRange = "limited";
-          directory = "/home/fattymanul/Videos";
+          directory = "";
           frameRate = 60;
           quality = "very_high";
           showCursor = true;
           videoCodec = "h264";
           videoSource = "portal";
         };
-        sessionMenu = {
-          countdownDuration = 10000;
-          enableCountdown = true;
-          position = "center";
-          powerOptions = [
-            {
-              action = "lock";
-              countdownEnabled = true;
-              enabled = true;
-            }
-            {
-              action = "suspend";
-              countdownEnabled = true;
-              enabled = true;
-            }
-            {
-              action = "hibernate";
-              countdownEnabled = true;
-              enabled = true;
-            }
-            {
-              action = "reboot";
-              countdownEnabled = true;
-              enabled = true;
-            }
-            {
-              action = "logout";
-              countdownEnabled = true;
-              enabled = true;
-            }
-            {
-              action = "shutdown";
-              countdownEnabled = true;
-              enabled = true;
-            }
-          ];
-          showHeader = true;
-        };
-        settingsVersion = 25;
-        systemMonitor = {
-          cpuCriticalThreshold = 90;
-          cpuWarningThreshold = 80;
-          criticalColor = "";
-          diskCriticalThreshold = 90;
-          diskWarningThreshold = 80;
-          memCriticalThreshold = 90;
-          memWarningThreshold = 80;
-          tempCriticalThreshold = 90;
-          tempWarningThreshold = 80;
-          useCustomColors = false;
-          warningColor = "";
-        };
+        settingsVersion = 16;
+        setupCompleted = true;
         templates = {
-          alacritty = false;
-          cava = false;
-          code = false;
           discord = false;
+          discord_armcord = false;
+          discord_dorion = false;
+          discord_equibop = false;
+          discord_lightcord = false;
+          discord_vesktop = false;
+          discord_webcord = false;
           enableUserTemplates = false;
           foot = false;
           fuzzel = false;
@@ -367,49 +285,30 @@ in
           kitty = false;
           pywalfox = false;
           qt = false;
-          spicetify = false;
-          telegram = false;
           vicinae = false;
-          walker = false;
-          wezterm = false;
         };
         ui = {
-          fontDefault = "Roboto";
+          fontDefault = "FiraCode Nerd Font";
           fontDefaultScale = 1;
           fontFixed = "DejaVu Sans Mono";
           fontFixedScale = 1;
-          panelBackgroundOpacity = 1;
-          panelsAttachedToBar = true;
-          settingsPanelAttachToBar = false;
+          panelsOverlayLayer = true;
           tooltipsEnabled = true;
         };
         wallpaper = {
           defaultWallpaper = "";
-          directory = "/home/fattymanul/Pictures/Wallpapers";
+          directory = "";
           enableMultiMonitorDirectories = false;
           enabled = true;
           fillColor = "#000000";
           fillMode = "crop";
-          hideWallpaperFilenames = false;
           monitors = [ ];
-          overviewEnabled = false;
-          panelPosition = "follow_bar";
           randomEnabled = false;
           randomIntervalSec = 300;
-          recursiveSearch = false;
           setWallpaperOnAllMonitors = true;
           transitionDuration = 1500;
           transitionEdgeSmoothness = 0.05;
           transitionType = "random";
-          useWallhaven = false;
-          wallhavenCategories = "111";
-          wallhavenOrder = "desc";
-          wallhavenPurity = "100";
-          wallhavenQuery = "";
-          wallhavenResolutionHeight = "";
-          wallhavenResolutionMode = "atleast";
-          wallhavenResolutionWidth = "";
-          wallhavenSorting = "relevance";
         };
       };
     };
