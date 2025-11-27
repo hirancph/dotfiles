@@ -127,7 +127,7 @@ in
         # --- KEY CHANGE HERE ---
         # This physically darkens the content of inactive windows
         dim_inactive = true;
-        dim_strength = 0.4; # 0.0 to 1.0 (0.4 is noticeably dim)
+        dim_strength = 0.15; # 0.0 to 1.0 (0.4 is noticeably dim)
         # -----------------------
 
         blur = {
