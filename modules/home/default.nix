@@ -38,7 +38,7 @@ in
     ./noctalia-shell
     ./nvf.nix
     #./obs-studio.nix
-    ./rmpc
+    ./rmpc.nix
     ./rofi
     ./qt.nix
     ./scripts
