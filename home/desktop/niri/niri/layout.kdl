@@ -1,0 +1,16 @@
+layout {
+  gaps 8
+
+  focus-ring {
+    width 2
+    active-color "#8ea4a2cc"
+    inactive-color "#18161699"
+  }
+
+  shadow {
+    softness 50
+    spread 0
+    offset x=0 y=8
+    color "#00000099"
+  }
+}
