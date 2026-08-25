@@ -1,0 +1,20 @@
+input {
+  keyboard {
+    xkb {
+      // Change capslock to escape
+      options "caps:escape_shifted_capslock"
+      layout "us"
+      model ""
+      rules ""
+      variant ""
+    }
+    repeat-delay 600
+    repeat-rate 25
+    track-layout "global"
+  }
+  touchpad {
+    tap
+    natural-scroll
+  }
+  mouse { accel-profile "flat"; }
+}
