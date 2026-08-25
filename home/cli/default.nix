@@ -1,0 +1,5 @@
+{...}: {
+  imports = [
+    ./modern-cli.nix
+  ];
+}
