@@ -1,0 +1,12 @@
+// WINDOW FOUCUS (VIM)
+Mod+H   { focus-column-left; }
+Mod+J   { focus-window-down; }
+Mod+K   { focus-window-up; }
+Mod+L   { focus-column-right; }
+
+
+
+
+// WINDOW MOVEMENT (VIM)
+Mod+Shift+H   { move-column-left; }
+Mod+Shift+J   { move-column-down; }
