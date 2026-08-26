@@ -12,7 +12,7 @@
     backupFileExtension = "backup";
     extraSpecialArgs = {inherit inputs pkgs-unstable;};
     users.hirancph = {
-      xdg.configFile."mimeapps.list".force = true;
+      #xdg.configFile."mimeapps.list".force = true;
       imports = [../../home];
       home.username = "hirancph";
       home.homeDirectory = "/home/hirancph";
