@@ -5,5 +5,6 @@
     ./pipewire.nix
     ./polkit.nix
     ./power-profiles.nix
+    ./xserver.nix
   ];
 }
