@@ -15,6 +15,6 @@
     eza
     bat
     fd
-    rigrep
+    ripgrep
   ];
 }
