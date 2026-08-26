@@ -15,7 +15,7 @@
       xdg.configFile."mimeapps.list".force = true;
       imports = [../../home];
       home.username = "hirancph";
-      home.homeDirectory = "/home/hirancph/";
+      home.homeDirectory = "/home/hirancph";
       home.stateVersion = "26.05";
       programs.home-manager.enable = true;
     };
