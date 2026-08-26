@@ -10,3 +10,5 @@ Mod+L   { focus-column-right; }
 // WINDOW MOVEMENT (VIM)
 Mod+Shift+H   { move-column-left; }
 Mod+Shift+J   { move-column-down; }
+Mod+Shift+K   { move-column-up; }
+Mod+Shift+L   { move-column-right; }
