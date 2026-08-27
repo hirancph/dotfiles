@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   services = {
     # needed for GNOME services outside of GNOME Desktop
+    dbus.enable = true;
     dbus.packages = with pkgs; [
       gcr
       gnome-settings-daemon
