@@ -2,6 +2,6 @@
   imports = [
     ./cli
     ./desktop
-    ./programs
+    ./gui
   ];
 }
