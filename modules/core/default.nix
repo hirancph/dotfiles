@@ -6,6 +6,7 @@
     ./home-manager.nix
     ./locale.nix
     ./nix.nix
+    ./noctalia-greeter.nix
     ./programs.nix
     ./users.nix
   ];
