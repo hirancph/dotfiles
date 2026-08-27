@@ -2,7 +2,7 @@
   imports = [
     ./bluetooth.nix
     ./fonts.nix
-    ./grub.nix
+    #./grub.nix
     ./home-manager.nix
     ./limine.nix
     ./locale.nix
