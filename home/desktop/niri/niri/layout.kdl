@@ -14,3 +14,10 @@ layout {
     color "#00000099"
   }
 }
+
+blur {
+    passes 5
+    offset 4.5
+    noise 0.015
+    saturation 1.3
+}
