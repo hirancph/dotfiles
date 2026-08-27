@@ -1,6 +1,9 @@
 window-rule {
   geometry-corner-radius 30
-}
+  clip-to-geometry true
+  draw-border-with-background false
+  }
+
 
 layer-rule {
   match namespace="^noctalia-backdrop"
