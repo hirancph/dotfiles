@@ -7,7 +7,6 @@ binds {
 
 
 
-
   // WINDOW MOVEMENT (VIM)
   Mod+Shift+H   { move-column-left; }
   Mod+Shift+J   { move-window-down; }
@@ -16,10 +15,28 @@ binds {
 
 
 
+  // WINDOW MANAGEMENT
+  Mod+Q repeat=false { close-window; }
+  Mod+F { maximize-column; }
+  Mod+Shift+F { fullscreen-window; }
+  Mod+Alt+F { toggle-window-floating; }
+
+
 
   // NOCTALIA KEYBINDS
   Mod+D {
         spawn-sh "noctalia msg panel-toggle launcher";
       }
-}
 
+
+
+  // WORKSPACE NAVIGATION
+  Mod+U   { focus-workspace-down; }
+  Mod+I   { focus-workspace-up; }
+
+
+
+  // MOVE TO WORKSPACE
+  Mod+Shift+U   { move-column-to-workspace-down; }
+  Mod+Shift+I   { move-column-to-workspace-up; }
+}
