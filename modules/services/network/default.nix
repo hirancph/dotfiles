@@ -1,7 +1,7 @@
 {...}: {
   imports = [
     ./avahi.nix
-    #./firewall.nix
+    ./firewall.nix
     ./network.nix
   ];
 }
