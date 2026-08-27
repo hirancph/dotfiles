@@ -10,7 +10,8 @@ binds {
 
   // WINDOW MOVEMENT (VIM)
   Mod+Shift+H   { move-column-left; }
-  Mod+Shift+J   { move-column-down; }
-  Mod+Shift+K   { move-column-up; }
+  Mod+Shift+J   { move-window-down; }
+  Mod+Shift+K   { move-window-up; }
   Mod+Shift+L   { move-column-right; }
 }
+
