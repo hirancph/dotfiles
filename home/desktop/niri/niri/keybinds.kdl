@@ -13,5 +13,13 @@ binds {
   Mod+Shift+J   { move-window-down; }
   Mod+Shift+K   { move-window-up; }
   Mod+Shift+L   { move-column-right; }
+
+
+
+
+  // NOCTALIA KEYBINDS
+  Mod+D {
+        spawn-sh "noctalia msg panel-toggle launcher";
+      }
 }
 
