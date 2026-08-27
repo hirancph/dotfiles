@@ -9,12 +9,6 @@
           "gnome"
         ];
       };
-      niri = {
-        default = [
-          "gtk"
-          "gnome"
-        ];
-      };
     };
     extraPortals = [
       pkgs.xdg-desktop-portal-gnome
@@ -22,3 +16,4 @@
     ];
   };
 }
+
