@@ -7,6 +7,8 @@
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    stylix.url = "github:danth/stylix";
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -19,9 +21,9 @@
     };
 
     noctalia-greeter = {
-        url = "github:noctalia-dev/noctalia-greeter";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
