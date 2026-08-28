@@ -7,7 +7,7 @@
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix/release-26.05";
 
     # Home manager
     home-manager = {
