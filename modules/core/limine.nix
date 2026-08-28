@@ -7,4 +7,5 @@
       maxGenerations = 10;
     };
   };
+  systemd.settings.Manager.DefaultTimeoutStopSec = "10s";
 }
