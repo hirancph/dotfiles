@@ -9,6 +9,7 @@
     ./nix.nix
     ./noctalia-greeter.nix
     ./programs.nix
+    ./stylix.nix
     ./users.nix
   ];
 }
