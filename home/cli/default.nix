@@ -4,6 +4,6 @@
     ./helix.nix
     ./modern-cli.nix
     ./session-variables.nix
-    ./yazi.nix
+    ./yazi
   ];
 }
