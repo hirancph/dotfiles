@@ -14,5 +14,7 @@
       package = pkgs.bibata-cursors;
       size = 36;
     };
+
+    targets.regreet.enable = false;
   };
 }
