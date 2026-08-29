@@ -2,6 +2,9 @@ prefer-no-csd
 layout {
   gaps 8
 
+  center-focused-column "never"
+  always-center-single-column
+
   focus-ring {
     width 2
     active-color "#8ea4a2cc"
