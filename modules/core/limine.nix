@@ -1,13 +1,45 @@
-{pkgs, lib, ...}: {
+{ pkgs, lib, ... }: {
+  stylix.targets.limine.enable = false;
+
   boot.loader = {
     limine = {
       enable = true;
       efiSupport = true;
       maxGenerations = 10;
+
+      resolution = "1920x1080";
+
+      style = {
+        wallpapers = [ ./../../themes/nix-kanagawa.png ];
+        wallpaperStyle = "stretched";
+        backdrop = "1f232a";
+
+        interface = {
+          branding = "NixOS // Kanagawa";
+          brandingColor = "6";
+          helpColor = "7";
+          helpHidden = true;
+        };
+
+        graphicalTerminal = {
+          foreground = "dcd7ba";
+          background = lib.mkForce null;
+          margin = 0; # Removes the border box and screen frame padding completely
+
+          font = {
+            scale = "1x1";
+            spacing = 1;
+          };
+
+          palette = "1f1f28:c34043:76946a:c0a36e:7e9cd8:957fb8:7aa89f:dcd7ba";
+          brightPalette = "2a2a37:e82424:98bb6c:e6c384:7fb4ca:938aa9:7aaa9c:c8c093";
+        };
+      };
     };
     systemd-boot.enable = lib.mkForce false;
     efi.canTouchEfiVariables = true;
   };
+
   systemd.settings.Manager.DefaultTimeoutStopSec = "10s";
 }
 
