@@ -7,8 +7,8 @@ include "spawn.kdl"
 include "windowrules.kdl"
 
 environment {
-  "XDG_CURRENT_DESKTOP" "niri"
-  "NIXOS_OZONE_WL" "1"
-  "QT_QPA_PLATFORM" "wayland"
-  "QT_QPA_PLATFORMTHEME" "qt5ct"
+  XDG_CURRENT_DESKTOP "niri"
+  NIXOS_OZONE_WL "1"
+  QT_QPA_PLATFORM "wayland"
+  QT_QPA_PLATFORMTHEME "kde"
 }
