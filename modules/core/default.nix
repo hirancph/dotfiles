@@ -4,13 +4,13 @@
     ./fonts.nix
     #./grub.nix
     ./home-manager.nix
-    #./limine.nix
+    ./limine.nix
     ./locale.nix
     ./nix.nix
     ./noctalia-greeter.nix
     ./programs.nix
     ./stylix.nix
-    ./systemd-boot.nix
+    #./systemd-boot.nix
     ./users.nix
   ];
 }
